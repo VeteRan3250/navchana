@@ -3,77 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Робота з зображеннями в HTML</title>
+    <title>Розклад занять</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #333333;
+            margin: 30px;
         }
 
-        .content-container {
-            max-width: 800px;
+        table {
+            width: 60%;
+            border-collapse: collapse;
             margin: 0 auto;
-            padding: 30px 20px;
+            text-align: center;
         }
 
-        h2 {
-            font-size: 1.25rem;
-            margin-top: 30px;
+        caption {
+            font-size: 1.15rem;
+            font-weight: bold;
             margin-bottom: 12px;
-            border-bottom: 1px solid #e0e0e0;
-            padding-bottom: 5px;
         }
 
-        .content-container > h2:first-child {
-            margin-top: 0;
+        th, td {
+            border: 1px solid #777777;
+            padding: 8px 6px;
+            font-size: 0.85rem;
         }
 
-        .bg-banner {
-            width: 100%;
-            height: 50vh;
-            background-image: url('https://picsum.photos/1200/600');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
         }
 
-        .bg-banner h1 {
-            color: #ffffff;
-            font-size: 2rem;
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
-            background-color: rgba(0, 0, 0, 0.35);
-            padding: 10px 20px;
-            border-radius: 6px;
+        .col-day {
+            width: 128px;
+        }
+
+        .col-time {
+            width: 100px;
+        }
+
+        .col-subject {
+            width: auto;
+            min-width: 160px;
+        }
+
+        .col-auditory {
+            width: 100px;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tbody tr:nth-child(odd) {
+            background-color: #ffffff;
         }
     </style>
 </head>
 <body>
 
-    <div class="content-container">
-
-        <h2>Завдання 1: Локальне зображення</h2>
-        <img src="\\192.168.0.7\GlobalDOCS\ІТ-41,42\ІТ-42\Степанович Юрій\Програмування веб\practik 6\foto\foto 1.AVIF" alt="Локальна фотографія природи" width="300" height="200" title="Локальне фото">
-
-        <h2>Завдання 2: Зображення з Інтернету (посилання)</h2>
-        <a href="https://picsum.photos/" target="_blank">
-            <img src="https://picsum.photos/300/200" alt="Випадкове фото сервісу Picsum" width="300" height="200" title="Натисніть для переходу на джерело">
-        </a>
-
-        <h2>Завдання 3: Зображення Base64</h2>
-        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iIzFhNzNlOCIvPjx0ZXh0IHg9IjUwIiB5PSI1NSIgZm9udC1zaXplPSIyMCIgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+QmFzZTY0PC90ZXh0Pjwvc3ZnPg==" alt="Base64 іконка" width="200" height="100" title="Розтягнуте по ширині вдвічі Base64 зображення">
-
-        <h2>Завдання 4: Фонове зображення в CSS</h2>
-
-    </div>
-
-    <div class="bg-banner">
-        <h1>Блок із фоновим зображенням</h1>
-    </div>
+    <table>
+        <caption>Розклад занять</caption>
+        <thead>
+            <tr>
+                <th rowspan="2" class="col-day">День</th>
+                <th colspan="2">Час</th>
+                <th rowspan="2" class="col-subject">Предмет</th>
+                <th rowspan="2" class="col-auditory">Аудиторія</th>
+            </tr>
+            <tr>
+                <th class="col-time">Початок</th>
+                <th class="col-time">Кінець</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="4">Вівторок</td>
+                <td>08:30</td>
+                <td>09:50</td>
+                <td>Організація комп'ютерних мереж</td>
+                <td>17</td>
+            </tr>
+            <tr>
+                <td>10:10</td>
+                <td>11:30</td>
+                <td>Організація комп'ютерних мереж</td>
+                <td>17</td>
+            </tr>
+            <tr>
+                <td>12:00</td>
+                <td>13:20</td>
+                <td>ООП</td>
+                <td>27</td>
+            </tr>
+            <tr>
+                <td>13:30</td>
+                <td>14:50</td>
+                <td>3Д моделювання</td>
+                <td>29</td>
+            </tr>
+            <tr>
+                <td rowspan="4">Середа</td>
+                <td>08:30</td>
+                <td>09:50</td>
+                <td>Компоненти</td>
+                <td>27</td>
+            </tr>
+            <tr>
+                <td>10:10</td>
+                <td>11:30</td>
+                <td>ООП</td>
+                <td>27</td>
+            </tr>
+            <tr>
+                <td>12:00</td>
+                <td>13:20</td>
+                <td>Економіка-ІТ</td>
+                <td>36</td>
+            </tr>
+            <tr>
+                <td>13:30</td>
+                <td>14:50</td>
+                <td>Моделювання</td>
+                <td>30</td>
+            </tr>
+        </tbody>
+    </table>
 
 </body>
 </html>
