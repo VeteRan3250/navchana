@@ -3,68 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Практична робота: Форматування тексту в HTML</title>
+    <title>Форматування блочних та вбудованих елементів</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background-color: #ffffff;
+            color: #333333;
+        }
+
+        .wrapper {
+            border: 2px solid #555555;
+            padding: 25px;
+            max-width: 750px;
+            margin: 0 auto;
+            border-radius: 4px;
+        }
+
+        .block-top {
+            background-color: #dedede;
+            border: 1px solid #777777;
+            padding: 20px;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .block-top h3 {
+            margin: 0;
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        .block-top span {
+            font-size: 0.85rem;
+            color: #333333;
+        }
+
+        .inline-section {
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
+
+        .highlight-badge {
+            background-color: #ff9800;
+            color: #ffffff;
+            padding: 2px 6px;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .link-sample {
+            color: #1a73e8;
+            text-decoration: underline;
+        }
+
+        .block-center {
+            background-color: #d8ecf8;
+            border: 2px dashed #1e88e5;
+            padding: 30px 20px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .block-center h4 {
+            margin: 0 0 10px 0;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .block-center p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #444444;
+        }
+
+        .buttons-row {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .tag-btn {
+            background-color: #ff7043;
+            color: #ffffff;
+            padding: 10px 25px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            display: inline-block;
+            text-align: center;
+            cursor: default;
+        }
+    </style>
 </head>
 <body>
 
-    <header>
-        <h1>Заголовок першого рівня (h1)</h1>
-        <p>Головний заголовок сторінки, який зазвичай позначає основну тему статті чи розділу.</p>
-
-        <h2>Заголовок другого рівня (h2)</h2>
-        <p>Використовується для позначення великих тематичних підрозділів документа.</p>
-
-        <h3>Заголовок третього рівня (h3)</h3>
-        <p>Допомагає структурувати вміст усередині підрозділу другого рівня.</p>
-
-        <h4>Заголовок четвертого рівня (h4)</h4>
-        <p>Застосовується для детальнішої розбивки та дрібніших пунктів інформації.</p>
-
-        <h5>Заголовок п'ятого рівня (h5)</h5>
-        <p>Рідко використовуваний рівень заголовка, призначений для глибшої ієрархії.</p>
-
-        <h6>Заголовок шостого рівня (h6)</h6>
-        <p>Найменший за рівнем ієрархії та розміром шрифту HTML-заголовок.</p>
-    </header>
-
-    <hr>
-
-    <section>
-        <h2>Стилізація тексту та робота з абзацами</h2>
+    <div class="wrapper">
         
-        <p>
-            Веб-розробка складається з багатьох компонентів. 
-            <strong>Мова розмітки HTML</strong> є основою побудови будь-якої вебсторінки, оскільки вона визначає її каркас і структуру.
-        </p>
+        <div class="block-top">
+            <h3>Це блочний елемент</h3>
+            <span>Він займає всю ширину контейнера</span>
+        </div>
 
-        <p>
-            Для правильного сприйняття матеріалу важливо дотримуватись правил оформлення. 
-            Використання <em>курсивного тексту</em> дозволяє зробити логічний наголос на певному слові або фразі, а 
-            <u>підкреслення окремих слів</u> привертає додаткову увагу користувача до термінів.
-        </p>
+        <div class="inline-section">
+            <span class="highlight-badge">Це цілісний</span> текст з <a href="#" class="link-sample">посиланням</a>
+        </div>
 
-        <p>
-            Також можна комбінувати кілька тегів одночасно: наприклад, фрагмент тексту може бути 
-            <strong><em>жирним курсивом</em></strong> або 
-            <u><strong>підкресленим жирним</strong></u> для максимального виділення.
-        </p>
-    </section>
+        <div class="block-center">
+            <h4>Ще один блочний елемент</h4>
+            <p>Цей має інший фон і границю</p>
+        </div>
 
-    <hr>
+        <div class="buttons-row">
+            <span class="tag-btn">Елемент 1</span>
+            <span class="tag-btn">Елемент 2</span>
+            <span class="tag-btn">Елемент 3</span>
+        </div>
 
-    <section>
-        <h2>Цитата відомої особистості</h2>
-        
-        <blockquote>
-            <p>
-                «Ваш час обмежений, тому не витрачайте його, живучи чужим життям. 
-                Не потрапляйте в пастку догми, яка вчить жити згідно з думками інших людей. 
-                <mark>Не дозволяйте шуму чужих думок заглушити ваш власний внутрішній голос.</mark> 
-                І найголовніше — майте відвагу йти за покликом власного серця та інтуїції.»
-            </p>
-            <footer>— <cite>Стів Джобс (промова перед випускниками Стенфорду, 2005 рік)</cite></footer>
-        </blockquote>
-    </section>
+    </div>
 
 </body>
 </html>
