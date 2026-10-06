@@ -3,123 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Форматування блочних та вбудованих елементів</title>
+    <title>Робота зі списками в HTML</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 30px;
             background-color: #ffffff;
-            color: #333333;
+            color: #222222;
+            margin: 25px;
         }
 
-        .wrapper {
+        .page-container {
             border: 2px solid #555555;
-            padding: 25px;
-            max-width: 750px;
+            padding: 30px;
+            max-width: 650px;
             margin: 0 auto;
             border-radius: 4px;
         }
 
-        .block-top {
-            background-color: #dedede;
-            border: 1px solid #777777;
-            padding: 20px;
-            margin-bottom: 25px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .block-top h3 {
-            margin: 0;
-            font-size: 1.25rem;
-            font-weight: bold;
-        }
-
-        .block-top span {
-            font-size: 0.85rem;
-            color: #333333;
-        }
-
-        .inline-section {
-            margin-bottom: 25px;
-            font-size: 0.95rem;
-        }
-
-        .highlight-badge {
-            background-color: #ff9800;
-            color: #ffffff;
-            padding: 2px 6px;
-            font-weight: bold;
-            display: inline-block;
-        }
-
-        .link-sample {
-            color: #1a73e8;
-            text-decoration: underline;
-        }
-
-        .block-center {
-            background-color: #d8ecf8;
-            border: 2px dashed #1e88e5;
-            padding: 30px 20px;
-            text-align: center;
-            margin-bottom: 25px;
-        }
-
-        .block-center h4 {
-            margin: 0 0 10px 0;
+        h3 {
             font-size: 1.1rem;
+            margin-top: 25px;
+            margin-bottom: 12px;
             font-weight: bold;
         }
 
-        .block-center p {
+        h3:first-child {
+            margin-top: 0;
+        }
+
+        .badge-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 15px;
+        }
+
+        .badge-list li {
+            background-color: #81d4fa;
+            color: #ffffff;
+            padding: 6px 18px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .numbered-list {
+            padding-left: 20px;
             margin: 0;
             font-size: 0.9rem;
-            color: #444444;
+            line-height: 1.6;
         }
 
-        .buttons-row {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
+        .nested-list {
+            padding-left: 20px;
+            margin: 0;
+            font-size: 0.9rem;
+            line-height: 1.6;
         }
 
-        .tag-btn {
-            background-color: #ff7043;
-            color: #ffffff;
-            padding: 10px 25px;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            display: inline-block;
-            text-align: center;
-            cursor: default;
+        .nested-list ul {
+            list-style-type: '◆ ';
+            padding-left: 20px;
+            margin-top: 4px;
+            margin-bottom: 4px;
+        }
+
+        .terms-list {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .terms-list dt {
+            font-weight: bold;
+            margin-top: 8px;
+        }
+
+        .terms-list dd {
+            margin-left: 0;
+            margin-bottom: 8px;
+            color: #555555;
         }
     </style>
 </head>
 <body>
 
-    <div class="wrapper">
+    <div class="page-container">
         
-        <div class="block-top">
-            <h3>Це блочний елемент</h3>
-            <span>Він займає всю ширину контейнера</span>
-        </div>
+        <h3>Ненумерований список</h3>
+        <ul class="badge-list">
+            <li>Елемент 1</li>
+            <li>Елемент 2</li>
+            <li>Елемент 3</li>
+        </ul>
 
-        <div class="inline-section">
-            <span class="highlight-badge">Це цілісний</span> текст з <a href="#" class="link-sample">посиланням</a>
-        </div>
+        <h3>Нумерований список</h3>
+        <ol class="numbered-list">
+            <li>Перший елемент</li>
+            <li>Другий елемент</li>
+            <li>Третій елемент</li>
+        </ol>
 
-        <div class="block-center">
-            <h4>Ще один блочний елемент</h4>
-            <p>Цей має інший фон і границю</p>
-        </div>
+        <h3>Багаторівневий список</h3>
+        <ol class="nested-list">
+            <li>Пункт 1
+                <ul>
+                    <li>Підпункт 1.1</li>
+                    <li>Підпункт 1.2</li>
+                </ul>
+            </li>
+            <li>Пункт 2</li>
+        </ol>
 
-        <div class="buttons-row">
-            <span class="tag-btn">Елемент 1</span>
-            <span class="tag-btn">Елемент 2</span>
-            <span class="tag-btn">Елемент 3</span>
-        </div>
+        <h3>Список термінів</h3>
+        <dl class="terms-list">
+            <dt>HTML</dt>
+            <dd>Мова розмітки гіпертексту</dd>
+            
+            <dt>CSS</dt>
+            <dd>Каскадні таблиці стилів</dd>
+        </dl>
 
     </div>
 
